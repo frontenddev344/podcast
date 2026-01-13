@@ -20,6 +20,9 @@
     font-family: var(--font-head);
 }
 
+ul {
+    list-style-type: none;
+}
 
 html.lenis,
 html.lenis body {
@@ -129,10 +132,23 @@ header {
     font-family: var(--font-display);
     font-weight: 900;
     font-size: 24px;
+    text-transform: uppercase;
 }
 
-nav a {
-    margin: 0 15px;
+.logo-icon span {
+    font: inherit;
+    color: var(--primary-yellow);
+}
+
+.site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.site-nav ul li a {
     text-decoration: none;
     color: var(--text-black);
     font-weight: 600;
@@ -225,10 +241,18 @@ nav a {
     overflow: hidden;
 }
 
+
 .marquee-content {
     display: flex;
     gap: 40px;
-    animation: marquee 20s linear infinite;
+    width: max-content;
+    /* Ensure width fits content */
+    /* animation handled by GSAP for hero */
+}
+
+/* Apply CSS animation only to footer marquees */
+.footer-marquees .marquee-content {
+    animation: marquee 30s linear infinite;
 }
 
 .marquee-content span {
@@ -255,6 +279,7 @@ nav a {
         transform: translateX(-50%);
     }
 }
+
 
 /* Stats & Support */
 .stats-support {
@@ -921,7 +946,7 @@ nav a {
 .header-flex {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 40px;
 }
 

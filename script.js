@@ -15,12 +15,71 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
-// Marquee clone for seamless loop
-const marqueeContent = document.querySelector('.marquee-content');
-if (marqueeContent) {
-    const clone = marqueeContent.innerHTML;
-    marqueeContent.innerHTML += clone;
-}
+// GSAP Scroll-Triggered Marquee
+// GSAP Scroll-Triggered Marquee (Hero Only)
+const heroMarquee = document.querySelectorAll('.hero .marquee-strip');
+
+heroMarquee.forEach((strip) => {
+    const content = strip.querySelector('.marquee-content');
+    if (!content) return;
+
+    // Clone content to ensure sufficient length for seamless loop
+    // We need at least enough content to fill the screen width + buffer
+    const contentWidth = content.scrollWidth;
+    const windowWidth = window.innerWidth;
+    const clonesNeeded = Math.ceil(windowWidth / contentWidth) + 1;
+
+    const originalHTML = content.innerHTML;
+    for (let i = 0; i < clonesNeeded; i++) {
+        content.innerHTML += originalHTML;
+    }
+
+    // Wrap for handling
+    const items = content.children;
+
+    // Use GSAP functionality
+    let xPercent = 0;
+    let direction = -1; // -1 = Right to Left (default/up), 1 = Left to Right (down)
+    const speed = 0.05; // Base speed
+
+    // Detect Scroll Direction with ScrollTrigger
+    ScrollTrigger.create({
+        trigger: document.body,
+        onUpdate: (self) => {
+            direction = self.direction === 1 ? 1 : -1;
+        }
+    });
+
+    gsap.to(content, {
+        x: 0, // Just a dummy tween to use the ticker effectively if needed, or we just use set
+        duration: 0
+    });
+
+    gsap.ticker.add(() => {
+        if (direction === 1) {
+            xPercent += speed; // Move Right
+        } else {
+            xPercent -= speed; // Move Left
+        }
+
+        // Seamless Loop Logic
+        if (xPercent <= -50) {
+            xPercent = 0;
+        }
+        if (xPercent > 0) {
+            xPercent = -50;
+        }
+
+        gsap.set(content, { xPercent: xPercent });
+    });
+});
+
+// Simple Marquee Clone for Footer (CSS Animation)
+const footerMarquees = document.querySelectorAll('.footer-marquees .marquee-content');
+footerMarquees.forEach(marquee => {
+    const clone = marquee.innerHTML;
+    marquee.innerHTML += clone;
+});
 
 const hero = document.querySelector('.hero');
 const playBtn = document.querySelector('.play-btn');
