@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Podcast Experience</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +15,8 @@
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
@@ -30,6 +31,11 @@
             </div>
             <nav class="site-nav">
                 <ul>
+                    <li class="menu-closed">
+                        <button class="menu-closed-btn">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </li>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Pages</a></li>
@@ -37,7 +43,11 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+            <button class="menu-open-btn">
+                <i class="ri-menu-line"></i>
+            </button>
             <button class="btn-black">Sign Up</button>
+
         </div>
     </header>
 
@@ -49,7 +59,7 @@
                 Listening</button>
             <div class="hero-image-container">
                 <div class="circle-bg"></div>
-                <img src="assets/hero_man.png" alt="Podcast Listener" class="hero-img">
+                <img src="assets/images/hero_man.png" alt="Podcast Listener" class="hero-img">
             </div>
         </div>
 
@@ -114,9 +124,9 @@
 
                 <div class="popular-creators">
                     <div class="avatar-group">
-                        <img src="assets/cat3.png" alt="Creator">
-                        <img src="assets/lead_man.png" alt="Creator">
-                        <img src="assets/cat1.png" alt="Creator">
+                        <img src="assets/images/cat3.png" alt="Creator">
+                        <img src="assets/images/lead_man.png" alt="Creator">
+                        <img src="assets/images/cat1.png" alt="Creator">
                     </div>
                     <div class="creators-text">
                         <h4>MOST POPULAR CREATORS</h4>
@@ -135,7 +145,7 @@
             </div>
             <div class="feature-card">
                 <div class="feature-img-container">
-                    <img src="assets/feature_man.png" alt="NFT Stream" class="feature-img">
+                    <img src="assets/images/feature_man.png" alt="NFT Stream" class="feature-img">
                 </div>
                 <div class="feature-info">
                     <span class="date">Dec 03, 2024</span>
@@ -173,16 +183,16 @@
             </div>
             <p class="subtitle">20+ Categories</p>
             <div class="categories-grid">
-                <div class="cat-item yellow"><img src="assets/cat1.png" alt="Category"></div>
-                <div class="cat-item orange large"><img src="assets/lead_man.png" alt="Category"></div>
+                <div class="cat-item yellow"><img src="assets/images/cat1.png" alt="Category"></div>
+                <div class="cat-item orange large"><img src="assets/images/lead_man.png" alt="Category"></div>
                 <!-- Reusing lead man for a large block -->
-                <div class="cat-item blue"><img src="assets/cat3.png" alt="Category"></div>
-                <div class="cat-item blue-dark"><img src="assets/hero_man.png" alt="Category"
+                <div class="cat-item blue"><img src="assets/images/cat3.png" alt="Category"></div>
+                <div class="cat-item blue-dark"><img src="assets/images/hero_man.png" alt="Category"
                         style="object-position: top;">
                 </div> <!-- Reusing hero part -->
-                <div class="cat-item pink large"><img src="assets/feature_man.png" alt="Category"></div>
+                <div class="cat-item pink large"><img src="assets/images/feature_man.png" alt="Category"></div>
                 <!-- Reusing feature -->
-                <div class="cat-item orange-dark"><img src="assets/cat1.png" alt="Category"></div>
+                <div class="cat-item orange-dark"><img src="assets/images/cat1.png" alt="Category"></div>
             </div>
         </div>
     </section>
@@ -196,14 +206,14 @@
             </div>
             <div class="leading-grid">
                 <div class="leading-card">
-                    <img src="assets/lead_man.png" alt="Leading Podcaster">
+                    <img src="assets/images/lead_man.png" alt="Leading Podcaster">
                 </div>
                 <div class="right-column">
                     <div class="community-card">
                         <div class="community-content">
                             <!-- headphones prop layout -->
                         </div>
-                        <img src="assets/headphones_prop.png" alt="Headphones" class="prop-img">
+                        <img src="assets/images/headphones_prop.png" alt="Headphones" class="prop-img">
                     </div>
                     <div class="stats-text-block">
                         <h3>24 EPISODES</h3>
@@ -223,7 +233,7 @@
         <div class="container">
             <div class="journey-cta">
                 <div class="journey-content-left">
-                    <h2 class="section-title" style="font-size: 56px;">START YOUR <br> CONVERSATION <br> JOURNEY!</h2>
+                    <h2 class="section-title">START YOUR <br> CONVERSATION <br> JOURNEY!</h2>
                     <div class="journey-buttons">
                         <button class="btn-white">GET STARTED</button>
                         <button class="btn-outline">STARTED FROM</button>
@@ -253,7 +263,7 @@
                 <div class="journey-image-right">
                     <!-- Yellow background circle is handled by CSS on this container or pseudo -->
                     <div class="circle-mask-container">
-                        <img src="assets/lead_man.png" alt="Happy Listener" class="journey-person-img">
+                        <img src="assets/images/lead_man.png" alt="Happy Listener" class="journey-person-img">
                         <div class="play-overlay">
                             <i class="ri-play-fill"></i>
                         </div>
@@ -277,24 +287,24 @@
             <!-- Tab Contents -->
             <div class="episodes-wrapper">
                 <div id="tech" class="episodes-grid tab-content active">
-                    <div class="episode-item"><img src="assets/hero_man.png" alt="Tech 1"></div>
-                    <div class="episode-item"><img src="assets/feature_man.png" alt="Tech 2"></div>
-                    <div class="episode-item"><img src="assets/lead_man.png" alt="Tech 3"></div>
+                    <div class="episode-item"><img src="assets/images/hero_man.png" alt="Tech 1"></div>
+                    <div class="episode-item"><img src="assets/images/feature_man.png" alt="Tech 2"></div>
+                    <div class="episode-item"><img src="assets/images/lead_man.png" alt="Tech 3"></div>
                 </div>
                 <div id="design" class="episodes-grid tab-content">
-                    <div class="episode-item"><img src="assets/cat3.png" alt="Design 1"></div>
-                    <div class="episode-item"><img src="assets/cat1.png" alt="Design 2"></div>
-                    <div class="episode-item"><img src="assets/feature_man.png" alt="Design 3"></div>
+                    <div class="episode-item"><img src="assets/images/cat3.png" alt="Design 1"></div>
+                    <div class="episode-item"><img src="assets/images/cat1.png" alt="Design 2"></div>
+                    <div class="episode-item"><img src="assets/images/feature_man.png" alt="Design 3"></div>
                 </div>
                 <div id="culture" class="episodes-grid tab-content">
-                    <div class="episode-item"><img src="assets/lead_man.png" alt="Culture 1"></div>
-                    <div class="episode-item"><img src="assets/hero_man.png" alt="Culture 2"></div>
-                    <div class="episode-item"><img src="assets/cat3.png" alt="Culture 3"></div>
+                    <div class="episode-item"><img src="assets/images/lead_man.png" alt="Culture 1"></div>
+                    <div class="episode-item"><img src="assets/images/hero_man.png" alt="Culture 2"></div>
+                    <div class="episode-item"><img src="assets/images/cat3.png" alt="Culture 3"></div>
                 </div>
                 <div id="business" class="episodes-grid tab-content">
-                    <div class="episode-item"><img src="assets/cat1.png" alt="Business 1"></div>
-                    <div class="episode-item"><img src="assets/hero_man.png" alt="Business 2"></div>
-                    <div class="episode-item"><img src="assets/feature_man.png" alt="Business 3"></div>
+                    <div class="episode-item"><img src="assets/images/cat1.png" alt="Business 1"></div>
+                    <div class="episode-item"><img src="assets/images/hero_man.png" alt="Business 2"></div>
+                    <div class="episode-item"><img src="assets/images/feature_man.png" alt="Business 3"></div>
                 </div>
             </div>
         </div>
@@ -314,43 +324,43 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/cat3.png" alt="Artist">
+                                <img src="assets/images/cat3.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/lead_man.png" alt="Artist">
+                                <img src="assets/images/lead_man.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/feature_man.png" alt="Artist">
+                                <img src="assets/images/feature_man.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/cat1.png" alt="Artist">
+                                <img src="assets/images/cat1.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/hero_man.png" alt="Artist">
+                                <img src="assets/images/hero_man.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/cat3.png" alt="Artist">
+                                <img src="assets/images/cat3.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
                         <div class="swiper-slide ">
                             <div class="artist-card">
-                                <img src="assets/lead_man.png" alt="Artist">
+                                <img src="assets/images/lead_man.png" alt="Artist">
                                 <h4>MOSKAUR ALOM</h4>
                             </div>
                         </div>
@@ -503,7 +513,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

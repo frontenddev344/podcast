@@ -16,6 +16,18 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 // GSAP Scroll-Triggered Marquee
+gsap.from(".site-nav ul li", {
+    y: -100,
+    stagger: 0.15,
+});
+
+document.querySelector('.menu-open-btn').addEventListener('click', () => {
+    document.querySelector('.site-nav').classList.add('active');
+});
+
+document.querySelector('.menu-closed-btn').addEventListener('click', () => {
+    document.querySelector('.site-nav').classList.remove('active');
+});
 // GSAP Scroll-Triggered Marquee (Hero Only)
 const heroMarquee = document.querySelectorAll('.hero .marquee-strip');
 
@@ -183,3 +195,19 @@ if (document.querySelector(".artistSwiper")) {
         },
     });
 }
+
+
+gsap.from(".stat-block", {
+    scale: 0.1,
+    duration: 1,
+    ease: "power3.out",
+    stagger: 0.15,
+    scrollTrigger: {
+        trigger: ".stat-block",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1
+        // markers: true
+    }
+});
+
