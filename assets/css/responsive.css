@@ -126,6 +126,7 @@
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         padding-bottom: 10px;
+        padding-top: 0;
         margin-bottom: 40px;
     }
     .tab-btn {
@@ -135,6 +136,34 @@
     .support-card {
         padding: 30px;
     }
+    .skew-up {
+        transform: rotate(-10deg);
+    }
+    .skew-down {
+        transform: rotate(10deg);
+    }
+    .artist-highlight {
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    .leading-podcaster {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .journey-cta {
+        margin-top: 50px;
+    }
+    .explore-categories {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .stats-text-block h3, .join-community-text h3 {
+        font-size: 24px;
+    }
+    footer {
+        margin-top: 50px;
+    }
+    
 }
 
 @media screen and (max-width:575px){
